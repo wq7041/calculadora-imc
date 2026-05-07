@@ -1,11 +1,14 @@
 #card{
    width: 70%;
-   background-color: aquamarine;
+   background-color: aqua;
    margin: 0 auto;
    text-align: center;
    padding: 25px;
    border-radius: 10px;
-   border-color: black
+   border-color: black;
+   box-shadow: 0 -4px 8px rgba(0,0,0,0.7);
+   margin-top:60px;
+   border-top: 8px solid #1100ff;
 }
 
 input{
@@ -24,7 +27,7 @@ input{
 }
 
 #botao{
-    background-color: red;
+    background-color: blue;
     color:aliceblue;
     font-size: larger;
 }
