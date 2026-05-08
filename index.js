@@ -5,7 +5,22 @@ let resultado = document.getElementById('resultado')
 
 let classificacao = " ";
 
-botao.onclick = () => {let imc = Number(peso.value) / Number(altura.value*altura.value)
+botao.onclick = () => {
+    let pesoNovo = peso.value.trim()
+    let pesoFormatado = pesoNovo.replace( ",", ".");
+    if(pesoNovo == "" || isNaN(pesoFormatado)){
+        alert("Corrija os Campos")
+        return
+    }
+
+    let alturaNovo = altura.value.trim()
+    let alturaFormatado = alturaNovo.replace( ",", ".");
+    if(alturaNovo == "" || isNaN(alturaFormatado)){
+        alert("Corrija os Campos")
+        return
+    }
+
+    let imc = Number(peso.value) / Number(altura.value*altura.value)
 if(imc < 18.5){
     classificacao = "Baixo Peso"}
 else if ((imc > 18.5) && (imc <= 24.9)){
@@ -22,6 +37,7 @@ else if ((imc > 35) && (imc <= 39.9)){
 }
 else {
     classificacao = "Obesidade 3"}
- resultado.innerText = `Seu IMC e ${imc} \n ${classificacao}`
+ resultado.innerText = `Seu IMC e ${imc.toFixed2} \n ${classificacao}`
 }
+
 
